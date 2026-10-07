@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Zinster Bistro Business Card</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="card-scene">
+
+
+        <div class="business-card"
+             id="businessCard">
+
+
+            <!-- =================================================
+                 FRONT SIDE
+            ================================================== -->
+
+            <div class="card-face card-front">
+
+
+                <!-- =================================================
+                     FOOD BACKGROUND
+                ================================================== -->
+
+                <div class="right-side">
+
+                    <img
+                        src="food-bg.png.png"
+                        class="food-photo"
+                        alt="Zinster Bistro Food"
+                    >
+
+                    <div class="image-overlay"></div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     LEFT WHITE AREA
+                ================================================== -->
+
+                <div class="left-side">
+
+
+                    <!-- OWNER -->
+
+                    <div class="owner">
+
+                        <h1>
+                            Zineth Eullyka
+                        </h1>
+
+                        <h2>
+                            Owner
+                        </h2>
+
+                    </div>
+
+
+
+                    <!-- CONTACT INFORMATION -->
+
+                    <div class="contact-list">
+
+
+                        <!-- PHONE -->
+
+                        <div class="contact-item">
+
+                            <div class="icon phone-icon">
+                                ☎
+                            </div>
+
+                            <span>
+                                000-123-456-7890
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <div class="contact-item">
+
+                            <div class="icon email-icon">
+                                ✉
+                            </div>
+
+                            <span>
+                                zinsterbistro@gmail.com
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- LOCATION -->
+
+                        <div class="contact-item location">
+
+                            <div class="icon location-icon">
+                                ♧
+                            </div>
+
+                            <span>
+                                Prk. Paglaum Bagumbayan,<br>
+                                Lupon Davao Oriental
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     TRUE S-SHAPED DIVIDER
+                ================================================== -->
+
+                <svg
+                    class="s-divider"
+                    viewBox="0 0 1000 577"
+                    preserveAspectRatio="none"
+                >
+
+
+                    <!-- WHITE CURVED PANEL -->
+
+                    <path
+                        class="white-panel"
+                        d="
+                            M 0 0
+
+                            L 355 0
+
+                            C 350 85,
+                              375 135,
+                              430 195
+
+                            C 500 270,
+                              535 330,
+                              525 395
+
+                            C 518 455,
+                              480 525,
+                              455 577
+
+                            L 0 577
+
+                            Z
+                        "
+                    />
+
+
+
+                    <!-- LIGHT GOLD -->
+
+                    <path
+                        class="light-gold-line"
+                        d="
+                            M 355 0
+
+                            C 350 85,
+                              375 135,
+                              430 195
+
+                            C 500 270,
+                              535 330,
+                              525 395
+
+                            C 518 455,
+                              480 525,
+                              455 577
+                        "
+                    />
+
+
+
+                    <!-- DARK GOLD -->
+
+                    <path
+                        class="dark-gold-line"
+                        d="
+                            M 369 0
+
+                            C 364 85,
+                              389 135,
+                              444 195
+
+                            C 514 270,
+                              549 330,
+                              539 395
+
+                            C 532 455,
+                              494 525,
+                              469 577
+                        "
+                    />
+
+                </svg>
+
+
+
+                <!-- =================================================
+                     LOGO
+                ================================================== -->
+
+                <img
+                    src="zinster-logo.png.png"
+                    class="logo"
+                    alt="Zinster Bistro Logo"
+                >
+
+
+
+                <!-- =================================================
+                     QR CODE
+                ================================================== -->
+
+                <div class="qr-container">
+
+                    <img
+                        src="qr.png.png"
+                        class="qr-code"
+                        alt="QR Code"
+                    >
+
+                    <p class="website">
+                        www.zinster.com
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 BACK SIDE
+            ================================================== -->
+
+            <div class="card-face card-back">
+
+
+                <!-- BACKGROUND -->
+
+                <div class="back-background"></div>
+
+
+
+                <!-- LOGO -->
+
+                <img
+                    src="zinster-logo.png.png"
+                    class="back-logo"
+                    alt="Zinster Bistro Logo"
+                >
+
+
+
+                <!-- YELLOW CURVED AREA -->
+
+                <div class="back-yellow-shape"></div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        const businessCard =
+            document.getElementById("businessCard");
+
+
+        businessCard.addEventListener(
+            "click",
+            function () {
+
+                businessCard.classList.toggle("flipped");
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

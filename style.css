@@ -1,0 +1,612 @@
+/* =========================================================
+   ZINSTER BISTRO BUSINESS CARD
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #222;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    padding: 20px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CARD SCENE
+========================================================= */
+
+.card-scene {
+    width: 1000px;
+    height: 577px;
+
+    perspective: 1800px;
+}
+
+
+/* =========================================================
+   BUSINESS CARD
+========================================================= */
+
+.business-card {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.9s
+        cubic-bezier(
+            0.4,
+            0,
+            0.2,
+            1
+        );
+}
+
+
+.business-card.flipped {
+    transform: rotateY(180deg);
+}
+
+
+/* =========================================================
+   CARD FACE
+========================================================= */
+
+.card-face {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.40);
+}
+
+
+/* =========================================================
+   FRONT
+========================================================= */
+
+.card-front {
+    background: #fffdfa;
+
+    transform: rotateY(0deg);
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   FOOD SIDE
+========================================================= */
+
+.right-side {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 77%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #000;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   FOOD IMAGE
+========================================================= */
+
+.food-photo {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    display: block;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.05) 0%,
+            rgba(0, 0, 0, 0) 50%,
+            rgba(0, 0, 0, 0.15) 100%
+        );
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LEFT WHITE SIDE
+========================================================= */
+
+.left-side {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 55%;
+    height: 100%;
+
+    background: transparent;
+
+    /* IMPORTANT:
+       TEXT IS ABOVE THE S-CURVE */
+    z-index: 22;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   OWNER
+========================================================= */
+
+.owner {
+    position: absolute;
+
+    top: 72px;
+    left: 50px;
+
+    z-index: 30;
+}
+
+
+.owner h1 {
+    color: #050505;
+
+    font-size: 40px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -1.5px;
+
+    white-space: nowrap;
+}
+
+
+.owner h2 {
+    margin-top: 8px;
+
+    color: #111;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CONTACT LIST
+========================================================= */
+
+.contact-list {
+    position: absolute;
+
+    left: 63px;
+    bottom: 68px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 21px;
+
+    z-index: 30;
+}
+
+
+/* =========================================================
+   CONTACT ITEM
+========================================================= */
+
+.contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    color: #241812;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 19px;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+.contact-item.location {
+    align-items: flex-start;
+}
+
+
+.contact-item span {
+    display: block;
+}
+
+
+/* =========================================================
+   ICONS
+========================================================= */
+
+.icon {
+    width: 28px;
+    min-width: 28px;
+
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #32180e;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+
+.phone-icon {
+    font-size: 22px;
+}
+
+
+.email-icon {
+    font-size: 23px;
+}
+
+
+.location-icon {
+    font-size: 26px;
+}
+
+
+/* =========================================================
+   TRUE S-SHAPED DIVIDER
+========================================================= */
+
+.s-divider {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 15;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   WHITE CURVED PANEL
+========================================================= */
+
+.white-panel {
+    fill: #fffdfa;
+}
+
+
+/* =========================================================
+   LIGHT GOLD S-CURVE
+========================================================= */
+
+.light-gold-line {
+    fill: none;
+
+    stroke: #d6a93e;
+
+    stroke-width: 30;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   DARK GOLD S-CURVE
+========================================================= */
+
+.dark-gold-line {
+    fill: none;
+
+    stroke: #956a08;
+
+    stroke-width: 10;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   OLD GOLD CURVES
+   DISABLED
+========================================================= */
+
+.gold-outer {
+    display: none;
+}
+
+
+.gold-inner {
+    display: none;
+}
+
+
+/* =========================================================
+   FRONT LOGO
+========================================================= */
+
+.logo {
+    position: absolute;
+
+    top: 23px;
+    right: 34px;
+
+    width: 205px;
+    height: 105px;
+
+    object-fit: contain;
+
+    z-index: 35;
+}
+
+
+/* =========================================================
+   QR CONTAINER
+========================================================= */
+
+.qr-container {
+    position: absolute;
+
+    right: 40px;
+    bottom: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    z-index: 35;
+}
+
+
+/* =========================================================
+   QR CODE
+========================================================= */
+
+.qr-code {
+    width: 108px;
+    height: 108px;
+
+    object-fit: contain;
+
+    display: block;
+
+    background: #fff;
+
+    padding: 4px;
+
+    border: 2px solid #fff;
+}
+
+
+/* =========================================================
+   WEBSITE
+========================================================= */
+
+.website {
+    margin-top: 4px;
+
+    color: #fff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 11px;
+
+    font-weight: normal;
+
+    text-shadow:
+        0 1px 3px
+        rgba(0, 0, 0, 0.9);
+}
+
+
+/* =========================================================
+   BACK SIDE
+========================================================= */
+
+.card-back {
+    background: #000;
+
+    transform: rotateY(180deg);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.back-background {
+    position: absolute;
+
+    inset: 0;
+
+    background: #000;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   BACK LOGO
+========================================================= */
+
+.back-logo {
+    position: absolute;
+
+    top: 45px;
+
+    left: 50%;
+
+    width: 750px;
+    height: 335px;
+
+    object-fit: contain;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   BACK YELLOW CURVE
+========================================================= */
+
+.back-yellow-shape {
+    position: absolute;
+
+    left: -80px;
+    bottom: -205px;
+
+    width: 1160px;
+    height: 390px;
+
+    background: #ffe49a;
+
+    border-radius:
+        50% 50% 0 0;
+
+    transform: rotate(-4deg);
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .card-scene {
+        width: 100%;
+        height: auto;
+
+        aspect-ratio:
+            1000 / 577;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .card-scene {
+        width:
+            calc(100vw - 20px);
+
+        height: auto;
+
+        aspect-ratio:
+            1000 / 577;
+    }
+}
